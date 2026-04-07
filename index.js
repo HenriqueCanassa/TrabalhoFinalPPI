@@ -13,6 +13,10 @@ app.use(session({
     cookie: { maxAge: 30 * 60 * 1000 }
 }));
 
+app.get('/', (req, res) => {
+    res.redirect('/login');
+});
+
 app.get('/login', (req, res) => {
     res.sendFile(__dirname + '/views/login.html');
 });
